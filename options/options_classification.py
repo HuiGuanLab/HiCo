@@ -1,4 +1,4 @@
-root_path = "/data/ssk/datasets/skeleton/data"
+root_path = "/data/xxx/datasets/skeleton/data"
 
 class  opts_ntu_60_cross_view():
 
