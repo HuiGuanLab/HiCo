@@ -27,4 +27,4 @@ pip3 install tensorboard
 ## Data Preprocessing
 - Download raw [NTU-RGB+D 60 and 120](https://github.com/shahroudy/NTURGB-D).
 - Follow the [skeleton-contrast](https://github.com/fmthoker/skeleton-contrast) data prepreprocessing instructions.
-- Replace the  data location in the option files.
+- Replace the [data_path](https://github.com/HuiGuanLab/HiCo/blob/081f97dd341e6e1a5884d7e75a9189aa233e96a3/options/options_pretraining.py#L17) with your processed data location in the option files.
