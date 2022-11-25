@@ -83,11 +83,12 @@ class HiEncoder(nn.Module):
         
 
         # embedding
-        xc = self.t_embedding(xc)
-        xp = self.s_embedding(xp)
+        xc = self.t_embedding(xc) # temporal domain
+        xp = self.s_embedding(xp) # spatial domain
 
 
-        #  two branch multi_granularity encoding
+        # represents skeleton sequences into multiple feature of
+        # different granularities from both temporal and spatial domains
         if self.encoder=="GRU" or self.encoder=="LSTM":
             vc, _ = self.t_encoder(xc)
             vp, _ = self.s_encoder(xp)
@@ -101,13 +102,13 @@ class HiEncoder(nn.Module):
         vp = vp.amax(dim=1).unsqueeze(1)
         
         
-        for i in range(1, self.granularity):
-            xc = self.t_downsample(xc)
-            xp = self.s_downsample(xp)
+        for i in range(1, self.granularity): 
+            xc = self.t_downsample(xc) # obtain clips of different temporal granularities
+            xp = self.s_downsample(xp) # obtain parts of different spatial granularities
 
             if self.encoder=="GRU" or self.encoder=="LSTM":
-                vc_i, _ = self.t_encoder(xc)
-                vp_i, _ = self.s_encoder(xp)
+                vc_i, _ = self.t_encoder(xc) 
+                vp_i, _ = self.s_encoder(xp) 
             else:
                 vc_i = self.t_encoder(xc)
                 vp_i = self.s_encoder(xp)
