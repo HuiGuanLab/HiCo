@@ -64,8 +64,10 @@ CUDA_VISIBLE_DEVICES=0 python action_retrieval.py \
 We release several pretrained models:
 - HiCo-GRU, NTU-60 and NTU-120: [released_models]()
 - HiCo-LSTM, NTU-60 and NTU-120: [released_models]()
-- HiCo-Transformer, NTU-60 and NTU-120: [released_models]()
-- Expected performance on skeleton-based action recognition:  
+- HiCo-Transformer, NTU-60 and NTU-120: [released_models]()  
+
+Expected performance on skeleton-based action recognition:  
+
 |     Model        | NTU 60 xsub (%) | NTU 60 xview (%) |   NTU 120 xsub (%)   |   NTU 120 xset (%)   |
 | :--------------: | :-------------: | :--------------: | :-----------------:  | :-----------------:  |
 | HiCo-GRU         |      80.6      |      88.6         |       72.5           |      73.8            |
