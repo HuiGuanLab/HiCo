@@ -102,10 +102,6 @@ def read_xyz(file, max_body=4, num_joint=25):  # 取了前两个body
 
 
 def gendata(data_path, out_path, ignored_sample_path=None, benchmark='xview', part='eval'):
-    Bone = [(1, 2), (2, 21), (3, 21), (4, 3), (5, 21), (6, 5), (7, 6), (8, 7), (9, 21),
-                     (10, 9), (11, 10), (12, 11), (13, 1), (14, 13), (15, 14), (16, 15), (17, 1),
-                     (18, 17), (19, 18), (20, 19), (21, 21), (22, 23), (23, 8), (24, 25), (25, 12)]
-    
     if ignored_sample_path != None:
         with open(ignored_sample_path, 'r') as f:
             ignored_samples = [
@@ -162,33 +158,24 @@ def gendata(data_path, out_path, ignored_sample_path=None, benchmark='xview', pa
         data = read_xyz(os.path.join(data_path, s), max_body=max_body_kinect, num_joint=num_joint)
         fp[i, :, 0:data.shape[1], :, :] = data
         fl[i] = data.shape[1] # num_frame
-    
-    motion = np.zeros_like(fp)
-    motion[:, :, :-1, :, :] = fp[:, :, 1:, :, :] - fp[:, :, :-1, :, :]
-    bone = np.zeros_like(fp)
-    for v1, v2 in Bone:
-        bone[:, :, :, v1 - 1, :] = fp[:, :, :, v1 - 1, :] - fp[:, :, :, v2 - 1, :]
-    
+
     fp = pre_normalization(fp)
     np.save('{}/{}_data_joint.npy'.format(out_path, part), fp)
-    np.save('{}/{}_data_motion.npy'.format(out_path, part), motion)
-    np.save('{}/{}_data_bone.npy'.format(out_path, part), bone)
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='NTU-RGB-D Data Converter.')
-    
-    #parser.add_argument('--data_path', default='../data/nturgbd_raw/nturgb+d_skeletons/')
-    #parser.add_argument('--ignored_sample_path',
-    #                    default='../data/nturgbd_raw/samples_with_missing_skeletons.txt')
-    #parser.add_argument('--out_folder', default='../data/NTU-RGB-D-60-AGCN/')
-    #benchmark = ['xsub', 'xview']
-
-    parser.add_argument('--data_path', default="/media/disk4/ssk/datasets/NTU_RGB+D/nturgbd_raw/nturgb+d_skeletons/")
+    parser.add_argument('--data_path', default='../data/nturgbd_raw/nturgb+d_skeletons/')
     parser.add_argument('--ignored_sample_path',
-                        default="/media/disk4/ssk/datasets/NTU_RGB+D/nturgbd_raw/samples_with_missing_skeletons.txt")
-    parser.add_argument('--out_folder', default="/media/star/ssk/datasets/3stream/")
-    benchmark = ['xsub','xview',]
+                        default='../data/nturgbd_raw/samples_with_missing_skeletons.txt')
+    parser.add_argument('--out_folder', default='../data/NTU-RGB-D-60-AGCN/')
+    benchmark = ['xsub', 'xview']
+
+    #parser.add_argument('--data_path', default='../data/nturgbd_raw_120/nturgb+d_skeletons/')
+    #parser.add_argument('--ignored_sample_path',
+    #                    default='../data/nturgbd_raw_120/samples_with_missing_skeletons.txt')
+    #parser.add_argument('--out_folder', default='../data/NTU-RGB-D-120-AGCN/')
+    #benchmark = ['xsub','xsetup', ]
 
     part = ['train', 'val']
     arg = parser.parse_args()
