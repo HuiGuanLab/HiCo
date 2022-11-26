@@ -16,7 +16,7 @@ This is a repository contains the implementation of our AAAI'23 paper:
 
 ## Requirements
 ![.](https://img.shields.io/badge/Python-3.9-yellow) ![.](https://img.shields.io/badge/Pytorch-1.12.1-yellow)  
-Use following instructions to create the corresponding conda environment. 
+Use the following instructions to create the corresponding conda environment. 
 ```
 conda create -n hico python=3.9 anaconda
 conda activate hico
@@ -26,8 +26,8 @@ pip3 install tensorboard
 
 ## Data Preprocessing
 - Download raw [NTU-RGB+D 60 and 120](https://github.com/shahroudy/NTURGB-D).
-- Follow the [skeleton-contrast](https://github.com/fmthoker/skeleton-contrast) data prepreprocessing instructions.
-- Replace the [data_path](https://github.com/HuiGuanLab/HiCo/blob/081f97dd341e6e1a5884d7e75a9189aa233e96a3/options/options_pretraining.py#L17,https://github.com/HuiGuanLab/HiCo/blob/d445bf10a11ded1423560bd680a250c8e1344736/options/options_classification.py#L1) with your processed data location in the option files.
+- Preprocess data with [skeleton-contrast](https://github.com/fmthoker/skeleton-contrast) data prepreprocessing instructions.
+- Replace the [data_path](https://github.com/HuiGuanLab/HiCo/blob/081f97dd341e6e1a5884d7e75a9189aa233e96a3/options/options_pretraining.py#L17) with your processed data location in the option files (option_pretraining.py, option_classification.py and option_retrieval.py).
 
 ## Pretraining and Evaluation
 Since our proposed HiCo consume less (due to smaller encoder and queue), we only implemented single GPU training.
