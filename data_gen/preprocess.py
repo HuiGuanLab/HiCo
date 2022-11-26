@@ -41,23 +41,23 @@ def pre_normalization(data, zaxis=[0, 1], xaxis=[8, 4]):
             mask = (person.sum(-1) != 0).reshape(T, V, 1)
             s[i_s, i_p] = (s[i_s, i_p] - main_body_center) * mask
 
-    # print('parallel the bone between hip(jpt 0) and spine(jpt 1) of the first person to the z axis')
-    # for i_s, skeleton in enumerate(tqdm(s)):
-    #     if skeleton.sum() == 0:
-    #         continue
-    #     joint_bottom = skeleton[0, 0, zaxis[0]]
-    #     joint_top = skeleton[0, 0, zaxis[1]]
-    #     axis = np.cross(joint_top - joint_bottom, [0, 0, 1])
-    #     angle = angle_between(joint_top - joint_bottom, [0, 0, 1])
-    #     matrix_z = rotation_matrix(axis, angle)
-    #     for i_p, person in enumerate(skeleton):
-    #         if person.sum() == 0:
-    #             continue
-    #         for i_f, frame in enumerate(person):
-    #             if frame.sum() == 0:
-    #                 continue
-    #             for i_j, joint in enumerate(frame):
-    #                 s[i_s, i_p, i_f, i_j] = np.dot(matrix_z, joint)
+    print('parallel the bone between hip(jpt 0) and spine(jpt 1) of the first person to the z axis')
+    for i_s, skeleton in enumerate(tqdm(s)):
+        if skeleton.sum() == 0:
+            continue
+        joint_bottom = skeleton[0, 0, zaxis[0]]
+        joint_top = skeleton[0, 0, zaxis[1]]
+        axis = np.cross(joint_top - joint_bottom, [0, 0, 1])
+        angle = angle_between(joint_top - joint_bottom, [0, 0, 1])
+        matrix_z = rotation_matrix(axis, angle)
+        for i_p, person in enumerate(skeleton):
+            if person.sum() == 0:
+                continue
+            for i_f, frame in enumerate(person):
+                if frame.sum() == 0:
+                    continue
+                for i_j, joint in enumerate(frame):
+                    s[i_s, i_p, i_f, i_j] = np.dot(matrix_z, joint)
 
     print(
         'parallel the bone between right shoulder(jpt 8) and left shoulder(jpt 4) of the first person to the x axis')
