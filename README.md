@@ -74,5 +74,5 @@ Expected performance on skeleton-based action recognition:
 | HiCo-LSTM        |      81.4      |      88.8         |       73.7           |      74.5            |
 | HiCo-Transformer |      81.1      |      88.6         |       72.8           |      74.1            | 
 
-# Acknowledgement
+## Acknowledgement
 The framework of our code is based on [skeleton-contrast](https://github.com/fmthoker/skeleton-contrast).
