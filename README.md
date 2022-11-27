@@ -64,6 +64,10 @@ Expected performance on skeleton-based action recognition:
 | HiCo-LSTM        |      81.4      |      88.8         |       73.7           |      74.5            |
 | HiCo-Transformer |      81.1      |      88.6         |       72.8           |      74.1            | 
 
+## Visualization
+We utilize [t-SNE](https://www.jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf) to visualize the learned action representation obtained by our HiCo-Transformer models with different granularities on NTU-60 xsub.
+![image](./fig/tsne.png)
+
 ## Citation
 If you find this repository useful, please consider citing our paper:
 ```
@@ -74,10 +78,6 @@ If you find this repository useful, please consider citing our paper:
   year={2023}
 }
 ```
-
-## Visualization
-We utilize t-SNE to visualize the learned action representation obtained by our HiCo-Transformer models with different granularities on NTU-60 xsub.
-
 
 ## Acknowledgement
 The framework of our code is based on [skeleton-contrast](https://github.com/fmthoker/skeleton-contrast).  
