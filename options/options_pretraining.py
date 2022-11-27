@@ -14,7 +14,7 @@ encoder_arguments = {
    "num_class":128
  }
 
-data_path = "/data/ssk/datasets/skeleton/data"
+data_path = "./data"
 
 class  opts_ntu_60_cross_view():
 
