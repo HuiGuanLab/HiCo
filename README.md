@@ -22,34 +22,39 @@ pip3 install tensorboard
 ## Pretraining and Evaluation
 HiCo consumes less (due to smaller encoders and queues), so we only implemented single GPU training.
 #### Unsupervised Pretraining
-- eg. Train on NTU-RGB+D 60 cross-view joint stream.
+- Run the following script for pretraining. It will save the checkpoints to `./checkpoints/$TEST_NAME/`.
 ```
-CUDA_VISIBLE_DEVICES=0 python pretraining.py \
-  --lr 0.01 \
-  --batch-size 64 \
-  --hico-t 0.2  --hico-k 2048 \
-  --checkpoint-path ./checkpoints/ntu60_xview_joint \
-  --schedule 351  --epochs 451  --pre-dataset ntu60 --protocol cross_view \
-  --skeleton-representation joint
+./run_pretraining.sh $CUDA_DEVICE $TEST_NAME $DATASET $PROTOCOL $REPRESENTATION
 ```
+`$CUDA_DEVICE` is the ID of used GPU.  
+`$TEST_NAME` is the name of the folder where the checkpoints are saved in.  
+`$DATASET` is the dataset to use for unsupervised pretraining (ntu60 or ntu120).  
+`$PROTOCOL` means training protocol (cross_subject/cross_view for ntu60, and cross_subject/cross_setup for ntu120).  
+`$REPRESENTATION` is the input skeleton representation (joint or bone or motion).
+- An example of pretraining on NTU-60 x-view joint stream.
+```
+./run_pretraining.sh 0 ntu60_xview_joint ntu60 cross_view joint
+```
+- Check `run_pretraining.sh` for other pretraining configrations.
+
 #### Downstream Task Evaluation
-- eg. Skeleton-based action recognition. Train a linear classifier on pretrained query encoder.
+- Skeleton-based action recognition. Train a linear classifier on pretrained query encoder. The parameter meaning is the same as above.
 ```
-CUDA_VISIBLE_DEVICES=0 python action_classification.py \
-  --lr 2 \
-  --batch-size 1024 \
-  --pretrained  ./checkpoints/ntu60_xview_joint/checkpoint_450.pth.tar \
-  --finetune-dataset ntu60 --protocol cross_view \
-  --finetune_skeleton_representation joint
+./run_action_classification.sh $CUDA_DEVICE $TEST_NAME $DATASET $PROTOCOL $REPRESENTATION
 ```
-- eg. Skeleton-based action retrieval. Apply a KNN classifier on on pretrained query encoder.
+It will automatically evaluate on the checkpoint of the last epoch obtained from pretraining. The following example is an evaluation for the previous pretraining on NTU-60 x-view joint stream.
 ```
-CUDA_VISIBLE_DEVICES=0 python action_retrieval.py \
-  --knn-neighbours 1 \
-  --pretrained  ./checkpoints/ntu60_xview_joint/checkpoint_0450.pth.tar \
-  --finetune-dataset ntu60 --protocol cross_view  \
-  --finetune-skeleton-representation joint
+./run_action_classification.sh 0 ntu60_xview_joint ntu60 cross_view joint
 ```
+
+- Skeleton-based action retrieval. Apply a KNN classifier on on pretrained query encoder.  
+```
+./run_action_retrieval.sh 0 ntu60_xview_joint ntu60 cross_view joint
+```
+It's similar to action recognition, and above is an example.
+- Check `run_action_classification.sh` and `run_action_retrieval.sh` for other downstream configrations.
+
+
 ## Pretrained Models
 We release several pretrained models:
 - HiCo-GRU, NTU-60 and NTU-120: [released_models]()
