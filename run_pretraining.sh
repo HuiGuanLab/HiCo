@@ -15,4 +15,3 @@ CUDA_VISIBLE_DEVICES=${cuda_device} python pretraining.py \
   --checkpoint-path ./checkpoints/${test_name} \
   --schedule 351  --epochs 451  --pre-dataset ${dataset} --protocol ${protocol} \
   --skeleton-representation ${representation} | tee -a ./checkpoints/${test_name}/pretraining.log
- 
