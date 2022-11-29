@@ -77,7 +77,7 @@ We utilize [t-SNE](https://www.jmlr.org/papers/volume9/vandermaaten08a/vandermaa
 If you find this repository useful, please consider citing our paper:
 ```
 @inproceedings{hico2023,
-  title={ Hierarchical Contrast for Unsupervised Skeleton-based Action Representation Learning},
+  title={Hierarchical Contrast for Unsupervised Skeleton-based Action Representation Learning},
   author={Jianfeng Dong and Shengkai Sun and Zhonglin Liu and Shujie Chen and Baolong Liu and Xun Wang},
   booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
   year={2023}
