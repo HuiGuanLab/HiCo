@@ -16,7 +16,7 @@ pip3 install tensorboard
 ## Data Preparation
 - Download raw [NTU-RGB+D 60 and 120 skeleton data](https://github.com/shahroudy/NTURGB-D) and save to ./data folder.
 - Preprocess data with with `data_gen/ntu_gendata.py`.
-- For convenience, we also provide preprocessed data in [Google Drive]().
+- For convenience, we also provide preprocessed data in Google Drive. [(to be released)]().
 <!--- - After preprocessing, replace the [data_path](https://github.com/HuiGuanLab/HiCo/blob/081f97dd341e6e1a5884d7e75a9189aa233e96a3/options/options_pretraining.py#L17) with your data location in the option files (`option_pretraining.py`, `option_classification.py` and `option_retrieval.py`). -->
 
 ## Pretraining and Evaluation
@@ -57,9 +57,9 @@ It's similar to action recognition, and above is an example.
 
 ## Pretrained Models
 We release several pretrained models:
-- HiCo-GRU, NTU-60 and NTU-120: [released_models]()
-- HiCo-LSTM, NTU-60 and NTU-120: [released_models]()
-- HiCo-Transformer, NTU-60 and NTU-120: [released_models]()  
+- HiCo-GRU, NTU-60 and NTU-120: [to be released]()
+- HiCo-LSTM, NTU-60 and NTU-120: [to be released]()
+- HiCo-Transformer, NTU-60 and NTU-120: [to be released]()  
 
 Expected performance on skeleton-based action recognition:  
 
