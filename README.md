@@ -87,7 +87,7 @@ If you find this repository useful, please consider citing our paper:
 ## Acknowledgement
 The framework of our code is based on [skeleton-contrast](https://github.com/fmthoker/skeleton-contrast).  
   
-This work was supported by the NSFC (61902347,
+This work was supported by the NSFC (61902347, 
 62002323, 61976188), the Public Welfare Technology Research
 Project of Zhejiang Province (LGF21F020010), the
 Open Projects Program of the National Laboratory of Pattern
