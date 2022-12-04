@@ -28,6 +28,7 @@ pip3 install tensorboard
 ```
 - Preprocess data with with `data_gen/ntu_gendata.py`.
 ```
+cd data_gen
 python ntu_gendata.py
 ```
 <!--- - For convenience, we also provide preprocessed data in Google Drive. [(upcoming)](). -->
