@@ -25,7 +25,7 @@ class  opts_ntu_60_cross_view():
       "data_path": data_path + "/NTU-RGB-D-60-AGCN/xview/train_data_joint.npy",
       "label_path": data_path + "/NTU-RGB-D-60-AGCN/xview/train_label.pkl",
       'num_frame_path': data_path + "/NTU-RGB-D-60-AGCN/xview/train_num_frame.npy",
-      'l_ratio': [0.5,1.0],
+      'l_ratio': [0.95],
       'input_size': 64
     }
    
@@ -63,7 +63,7 @@ class  opts_ntu_60_cross_subject():
       "data_path": data_path + "/NTU-RGB-D-60-AGCN/xsub/train_data_joint.npy",
       "label_path": data_path + "/NTU-RGB-D-60-AGCN/xsub/train_label.pkl",
       'num_frame_path': data_path + "/NTU-RGB-D-60-AGCN/xsub/train_num_frame.npy",
-      'l_ratio': [0.5,1.0],
+      'l_ratio': [0.95],
       'input_size': 64
     }
    
@@ -102,7 +102,7 @@ class  opts_ntu_120_cross_subject():
       "data_path": data_path + "/NTU-RGB-D-120-AGCN/xsub/train_data_joint.npy",
       "label_path": data_path + "/NTU-RGB-D-120-AGCN/xsub/train_label.pkl",
       'num_frame_path': data_path + "/NTU-RGB-D-120-AGCN/xsub/train_num_frame.npy",
-      'l_ratio': [0.5,1.0],
+      'l_ratio': [0.95],
       'input_size': 64
     }
    
@@ -140,7 +140,7 @@ class  opts_ntu_120_cross_setup():
       "data_path": data_path + "/NTU-RGB-D-120-AGCN/xsetup/train_data_joint.npy",
       "label_path": data_path + "/NTU-RGB-D-120-AGCN/xsetup/train_label.pkl",
       'num_frame_path': data_path + "/NTU-RGB-D-120-AGCN/xsetup/train_num_frame.npy",
-      'l_ratio': [0.5,1.0],
+      'l_ratio': [0.95],
       'input_size': 64
     }
    
@@ -179,7 +179,7 @@ class  opts_pku_part1_cross_subject():
       "data_path": data_path + "/pku_part1_frame50/xsub/train_position.npy",
       "label_path": data_path + "/pku_part1_frame50/xsub/train_label.pkl",
       "num_frame_path": None ,
-      'l_ratio': [0.5,1.0],
+      'l_ratio': [0.95],
       'input_size': 64
     }
    
@@ -217,7 +217,7 @@ class  opts_pku_part2_cross_subject():
       "data_path": data_path + "/pku_part2_frame50/xsub/train_position.npy",
       "label_path": data_path + "/pku_part2_frame50/xsub/train_label.pkl",
       "num_frame_path": None ,
-      'l_ratio': [0.5,1.0],
+      'l_ratio': [0.95],
       'input_size': 64
     }
    
