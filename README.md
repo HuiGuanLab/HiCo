@@ -72,9 +72,9 @@ It's similar to action recognition, and above is an example.
 
 ## Pretrained Models
 We release several pretrained models:
-- HiCo-GRU, NTU-60 and NTU-120: [upcoming]()
-- HiCo-LSTM, NTU-60 and NTU-120: [upcoming]()
-- HiCo-Transformer, NTU-60 and NTU-120: [upcoming]()  
+- HiCo-GRU, NTU-60 and NTU-120: [released_model](https://drive.google.com/drive/folders/1gg_duJfAhKHp5OiTjLRegUSbS6ltw9s8?usp=sharing)
+- HiCo-LSTM, NTU-60 and NTU-120: [released_model](https://drive.google.com/drive/folders/1plsXniflfZCRLDdeagK97ciAoWBhcDDU?usp=sharing)
+- HiCo-Transformer, NTU-60 and NTU-120: [released_model](https://drive.google.com/drive/folders/163Fy2EKM-umuYC1-znQgNCdmQxvxRt2o?usp=sharing)  
 
 Expected performance on skeleton-based action recognition:  
 
