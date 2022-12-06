@@ -50,10 +50,9 @@ HiCo consumes less (due to smaller encoders and queues), so we only implemented 
 ```
 ./run_pretraining.sh 0 ntu60_xview_joint ntu60 cross_view joint
 ```
-- Check `run_pretraining.sh` for other pretraining configrations.
 
 #### Downstream Task Evaluation
-- Skeleton-based action recognition. Train a linear classifier on pretrained query encoder. The parameter meaning is the same as above.
+- **Task1: Skeleton-based action recognition**. Train a linear classifier on pretrained query encoder. The parameter meaning is the same as above.
 ```
 ./run_action_classification.sh $CUDA_DEVICE $TEST_NAME $DATASET $PROTOCOL $REPRESENTATION
 ```
@@ -62,12 +61,11 @@ It will automatically evaluate on the checkpoint of the last epoch obtained from
 ./run_action_classification.sh 0 ntu60_xview_joint ntu60 cross_view joint
 ```
 
-- Skeleton-based action retrieval. Apply a KNN classifier on on pretrained query encoder.  
+- **Task2: Skeleton-based action retrieval**. Apply a KNN classifier on on pretrained query encoder.  
 ```
 ./run_action_retrieval.sh 0 ntu60_xview_joint ntu60 cross_view joint
 ```
 It's similar to action recognition, and above is an example.
-- Check `run_action_classification.sh` and `run_action_retrieval.sh` for other downstream configrations.
 
 
 ## Pretrained Models
