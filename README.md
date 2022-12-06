@@ -61,18 +61,17 @@ It will automatically evaluate on the checkpoint of the last epoch obtained from
 ./run_action_classification.sh 0 ntu60_xview_joint ntu60 cross_view joint
 ```
 
-- **Task2: Skeleton-based action retrieval**. Apply a KNN classifier on on pretrained query encoder.  
+- **Task2: Skeleton-based action retrieval**. Apply a KNN classifier on on pretrained query encoder. It's similar to action recognition, here is an example. 
 ```
 ./run_action_retrieval.sh 0 ntu60_xview_joint ntu60 cross_view joint
 ```
-It's similar to action recognition, and above is an example.
 
 
 ## Pretrained Models
 We release several pretrained models:
-- HiCo-GRU, NTU-60 and NTU-120: [released_model](https://drive.google.com/drive/folders/1gg_duJfAhKHp5OiTjLRegUSbS6ltw9s8?usp=sharing)
-- HiCo-LSTM, NTU-60 and NTU-120: [released_model](https://drive.google.com/drive/folders/1plsXniflfZCRLDdeagK97ciAoWBhcDDU?usp=sharing)
-- HiCo-Transformer, NTU-60 and NTU-120: [released_model](https://drive.google.com/drive/folders/163Fy2EKM-umuYC1-znQgNCdmQxvxRt2o?usp=sharing)  
+- HiCo-GRU on NTU-60 and NTU-120: [released_model](https://drive.google.com/drive/folders/1gg_duJfAhKHp5OiTjLRegUSbS6ltw9s8?usp=sharing)
+- HiCo-LSTM on NTU-60 and NTU-120: [released_model](https://drive.google.com/drive/folders/1plsXniflfZCRLDdeagK97ciAoWBhcDDU?usp=sharing)
+- HiCo-Transformer on NTU-60 and NTU-120: [released_model](https://drive.google.com/drive/folders/163Fy2EKM-umuYC1-znQgNCdmQxvxRt2o?usp=sharing)  
 
 Expected performance on skeleton-based action recognition:  
 
