@@ -94,13 +94,14 @@ If you find this repository useful, please consider citing our paper:
   booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
   year={2023}
 }
-
+<!---
 @article{dong2022hierarchical,
   title={Hierarchical Contrast for Unsupervised Skeleton-based Action Representation Learning},
   author={Dong, Jianfeng and Sun, Shengkai and Liu, Zhonglin and Chen, Shujie and Liu, Baolong and Wang, Xun},
   journal={arXiv preprint arXiv:2212.02082},
   year={2022}
 }
+-->
 ```
 
 ## Acknowledgement
