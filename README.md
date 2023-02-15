@@ -1,5 +1,5 @@
 # Hierarchical Contrast for Unsupervised Skeleton-based Action Representation Learning
-This is a repository contains the implementation of our AAAI'23 paper [Hierarchical Contrast for Unsupervised Skeleton-based Action Representation Learning](https://arxiv.org/abs/2212.02082).
+This is a repository contains the implementation of our AAAI'23 oral paper [Hierarchical Contrast for Unsupervised Skeleton-based Action Representation Learning](https://arxiv.org/abs/2212.02082).
 
 ![image](./fig/hico.png)
 
